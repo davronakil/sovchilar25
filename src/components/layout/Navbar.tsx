@@ -1,17 +1,22 @@
 import Link from 'next/link';
 import NavItems from './NavItems';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 
 export default function Navbar() {
   return (
-    <nav className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between h-16 items-center">
-          <Link href="/" className="text-xl font-semibold text-gray-800 dark:text-white">
-            Sovchilar
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="container-custom">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="text-xl font-bold">Sovchilar</span>
           </Link>
-          <NavItems />
+
+          <div className="flex items-center gap-4">
+            <NavItems />
+            <ThemeToggle />
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
