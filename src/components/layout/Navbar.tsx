@@ -1,12 +1,12 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import LanguageSelector from '../language/LanguageSelector';
-import { Button } from '../ui/Button';
+import { usePathname } from 'next/navigation';
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
-const Navbar: React.FC = () => {
-  const router = useRouter();
+export default function Navbar() {
+  const pathname = usePathname();
 
   return (
     <nav className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
@@ -20,13 +20,17 @@ const Navbar: React.FC = () => {
             <SignedIn>
               <Link
                 href="/matches"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                className={`text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ${
+                  pathname === '/matches' ? 'text-blue-600 dark:text-blue-400' : ''
+                }`}
               >
                 Matches
               </Link>
               <Link
                 href="/profile"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                className={`text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ${
+                  pathname === '/profile' ? 'text-blue-600 dark:text-blue-400' : ''
+                }`}
               >
                 Profile
               </Link>
@@ -36,7 +40,9 @@ const Navbar: React.FC = () => {
             <SignedOut>
               <Link
                 href="/sign-in"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                className={`text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ${
+                  pathname === '/sign-in' ? 'text-blue-600 dark:text-blue-400' : ''
+                }`}
               >
                 Sign In
               </Link>
@@ -52,6 +58,4 @@ const Navbar: React.FC = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
