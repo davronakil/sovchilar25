@@ -1,10 +1,10 @@
-import { currentUser } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 export default async function ProfilePage() {
-  const user = await currentUser();
+  const { userId } = await auth();
 
-  if (!user) {
+  if (!userId) {
     redirect("/sign-in");
   }
 
@@ -17,15 +17,17 @@ export default async function ProfilePage() {
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
         <div className="flex items-center gap-4 mb-6">
           <img
-            src={user.imageUrl}
-            alt={user.firstName || "Profile"}
+            src={`https://ui-avatars.com/api/?name=${userId}`}
+            alt="Profile"
             className="w-20 h-20 rounded-full"
           />
           <div>
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-              {user.firstName} {user.lastName}
+              User Profile
             </h2>
-            <p className="text-gray-600 dark:text-gray-300">{user.emailAddresses[0].emailAddress}</p>
+            <p className="text-gray-600 dark:text-gray-400">
+              Manage your profile settings
+            </p>
           </div>
         </div>
 

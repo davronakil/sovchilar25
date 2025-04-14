@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable React's strict mode for better development experience
   reactStrictMode: true,
-  i18n: {
-    locales: ['en', 'ru', 'uz'],
-    defaultLocale: 'en',
-    localeDetection: false
-  },
+
+  // Configure image domains for Next.js Image component
   images: {
-    domains: ['avatars.githubusercontent.com', 'lh3.googleusercontent.com'],
-  }
+    domains: [
+      'avatars.githubusercontent.com',
+      'lh3.googleusercontent.com',
+    ],
+  },
 };
 
 module.exports = nextConfig;

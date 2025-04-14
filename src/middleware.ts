@@ -1,28 +1,40 @@
-import { authMiddleware } from "@clerk/nextjs";
+import { authMiddleware } from "@clerk/nextjs/server";
 
+/**
+ * List of routes that don't require authentication
+ * These routes are accessible to everyone
+ */
+const publicRoutes = [
+  "/",
+  "/sign-up",
+  "/sign-in",
+];
+
+/**
+ * List of routes that should be ignored by the middleware
+ * These routes can be accessed while signed out
+ */
+const ignoredRoutes = [
+  "/api/webhook",
+];
+
+/**
+ * Middleware configuration for authentication
+ * @see https://clerk.com/docs/references/nextjs/auth-middleware
+ */
 export default authMiddleware({
-  // Routes that can be accessed while signed out
-  publicRoutes: [
-    "/",
-    "/api/webhook",
-    "/sign-in",
-    "/sign-up",
-    "/api/webhooks/clerk",
-    "/api/webhooks/stripe",
-    "/:locale",
-    "/:locale/sign-in",
-    "/:locale/sign-up",
-    "/:locale/about",
-    "/:locale/contact",
-    "/:locale/privacy",
-    "/:locale/terms"
-  ],
-  ignoredRoutes: [
-    "/api/webhooks/clerk",
-    "/api/webhooks/stripe"
-  ]
+  publicRoutes,
+  ignoredRoutes,
 });
 
+/**
+ * Matcher configuration for the middleware
+ * This determines which routes the middleware should run on
+ */
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: [
+    "/((?!.+\\.[\\w]+$|_next).*)", // Match all routes except static files
+    "/",                            // Match the root route
+    "/(api|trpc)(.*)",             // Match API routes
+  ],
 };

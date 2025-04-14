@@ -1,0 +1,31 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out"
+  },
+  "home": {
+    "title": "Find Your Perfect Match",
+    "description": "Welcome to Sovchilar, where traditional matchmaking meets modern technology. We help you find meaningful connections based on your values, interests, and life goals.",
+    "viewMatches": "View Matches",
+    "features": {
+      "smartMatching": {
+        "title": "Smart Matching",
+        "description": "Our advanced algorithm considers your preferences, values, and lifestyle to suggest compatible matches."
+      },
+      "privacy": {
+        "title": "Privacy First",
+        "description": "Your privacy and security are our top priority. Control what you share and who can see your profile."
+      },
+      "guidedProcess": {
+        "title": "Guided Process",
+        "description": "Get personalized support throughout your journey to finding the right match."
+      }
+    }
+  }
+}

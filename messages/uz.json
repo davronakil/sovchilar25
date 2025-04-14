@@ -1,0 +1,31 @@
+{
+  "navigation": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "contact": "Aloqa"
+  },
+  "auth": {
+    "signIn": "Kirish",
+    "signUp": "Ro'yxatdan o'tish",
+    "signOut": "Chiqish"
+  },
+  "home": {
+    "title": "Mukammal juftingizni toping",
+    "description": "Sovchilarga xush kelibsiz, bu yerda an'anaviy sovchilik zamonaviy texnologiyalar bilan uchrashadi. Biz sizga qadriyatlaringiz, qiziqishlaringiz va hayotiy maqsadlaringiz asosida mazmunli aloqalarni topishda yordam beramiz.",
+    "viewMatches": "Mosliklarni ko'rish",
+    "features": {
+      "smartMatching": {
+        "title": "Aqlli moslashtirish",
+        "description": "Bizning ilg'or algoritmimiz sizning afzalliklaringiz, qadriyatlaringiz va turmush tarzingizni hisobga olib, mos keladigan juftliklarni taklif qiladi."
+      },
+      "privacy": {
+        "title": "Maxfiylik birinchi o'rinda",
+        "description": "Sizning maxfiyligingiz va xavfsizligingiz bizning asosiy ustuvorligimizdir. Nima bilan bo'lishishingizni va kim sizning profilingizni ko'rishi mumkinligini nazorat qiling."
+      },
+      "guidedProcess": {
+        "title": "Rahbarlik qilingan jarayon",
+        "description": "To'g'ri juftlikni topish yo'lida shaxsiy qo'llab-quvvatlash oling."
+      }
+    }
+  }
+}
