@@ -4,10 +4,11 @@ const nextConfig = {
   i18n: {
     locales: ['en', 'ru', 'uz'],
     defaultLocale: 'en',
+    localeDetection: false
   },
   images: {
-    domains: ['res.cloudinary.com'],
-  },
+    domains: ['avatars.githubusercontent.com', 'lh3.googleusercontent.com'],
+  }
 };
 
-export default nextConfig;
+module.exports = nextConfig;

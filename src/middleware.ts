@@ -11,8 +11,16 @@ export default authMiddleware({
     "/api/webhooks/stripe",
     "/:locale",
     "/:locale/sign-in",
-    "/:locale/sign-up"
+    "/:locale/sign-up",
+    "/:locale/about",
+    "/:locale/contact",
+    "/:locale/privacy",
+    "/:locale/terms"
   ],
+  ignoredRoutes: [
+    "/api/webhooks/clerk",
+    "/api/webhooks/stripe"
+  ]
 });
 
 export const config = {
